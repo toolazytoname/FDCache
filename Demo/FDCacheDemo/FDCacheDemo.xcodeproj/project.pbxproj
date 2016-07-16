@@ -15,6 +15,9 @@
 		447408F11D39BB6E005A5267 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447408EF1D39BB6E005A5267 /* LaunchScreen.storyboard */; };
 		447408FC1D39BB6E005A5267 /* FDCacheDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 447408FB1D39BB6E005A5267 /* FDCacheDemoTests.m */; };
 		447409071D39BB6E005A5267 /* FDCacheDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 447409061D39BB6E005A5267 /* FDCacheDemoUITests.m */; };
+		447409171D39F403005A5267 /* FDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 447409161D39F403005A5267 /* FDCache.m */; };
+		447409181D39F403005A5267 /* FDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 447409161D39F403005A5267 /* FDCache.m */; };
+		447409191D39F403005A5267 /* FDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 447409161D39F403005A5267 /* FDCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		447409021D39BB6E005A5267 /* FDCacheDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FDCacheDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447409061D39BB6E005A5267 /* FDCacheDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDCacheDemoUITests.m; sourceTree = "<group>"; };
 		447409081D39BB6E005A5267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447409151D39F403005A5267 /* FDCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCache.h; sourceTree = "<group>"; };
+		447409161D39F403005A5267 /* FDCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		447408E01D39BB6E005A5267 /* FDCacheDemo */ = {
 			isa = PBXGroup;
 			children = (
+				447409141D39F3DB005A5267 /* FDCache */,
 				447408E41D39BB6E005A5267 /* AppDelegate.h */,
 				447408E51D39BB6E005A5267 /* AppDelegate.m */,
 				447408E71D39BB6E005A5267 /* ViewController.h */,
@@ -138,6 +144,16 @@
 				447409081D39BB6E005A5267 /* Info.plist */,
 			);
 			path = FDCacheDemoUITests;
+			sourceTree = "<group>";
+		};
+		447409141D39F3DB005A5267 /* FDCache */ = {
+			isa = PBXGroup;
+			children = (
+				447409151D39F403005A5267 /* FDCache.h */,
+				447409161D39F403005A5267 /* FDCache.m */,
+			);
+			name = FDCache;
+			path = ../../../FDCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447408E91D39BB6E005A5267 /* ViewController.m in Sources */,
+				447409171D39F403005A5267 /* FDCache.m in Sources */,
 				447408E61D39BB6E005A5267 /* AppDelegate.m in Sources */,
 				447408E31D39BB6E005A5267 /* main.m in Sources */,
 			);
@@ -281,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447408FC1D39BB6E005A5267 /* FDCacheDemoTests.m in Sources */,
+				447409181D39F403005A5267 /* FDCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447409071D39BB6E005A5267 /* FDCacheDemoUITests.m in Sources */,
+				447409191D39F403005A5267 /* FDCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
