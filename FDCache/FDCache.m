@@ -45,9 +45,12 @@ static char *ioQueuelabel = "com.sohu.mobile.FileDiskCache";
         return;
     }
     __weak typeof(self) weakSelf = self;
+    NSLog(@"weakSelf:%@",weakSelf);
     dispatch_async(weakSelf.ioQueue, ^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSLog(@"strongSelf store begin:%@",strongSelf);
         [strongSelf storeSyncToDiskWithArray:arrayToStore forKey:key];
+        NSLog(@"strongSelf store end:%@",strongSelf);
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion();
