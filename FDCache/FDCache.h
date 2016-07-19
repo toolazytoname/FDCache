@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void(^cacheQueryCompletedBlock)(NSArray *dataArray);
-typedef void(^cacheIsExitCompletedBlock)(BOOL isExit);
+typedef void(^cacheIsExitCompletedBlock)(BOOL isExist);
 typedef void(^cacheNoParamsBlock)();
 
 /**
