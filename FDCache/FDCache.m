@@ -186,16 +186,11 @@ static NSString *defaultFolderName = @"FDCache";
     if (!key || !(key.length > 0)) {
         return NO;
     }
-    __block BOOL isExist = NO;
+    BOOL isExist = NO;
     NSString *cacheFilePath = [self cacheFilePathforKey:key];
-    __weak typeof(self) weakSelf = self;
-    dispatch_sync(self.ioQueue, ^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        isExist = [strongSelf.fileManager fileExistsAtPath:cacheFilePath];
-    });
+    isExist = [self.fileManager fileExistsAtPath:cacheFilePath];
     return isExist;
 }
-
 
 #pragma mark - private
 - (NSString *)cacheFilePathforKey:(NSString *)key {
