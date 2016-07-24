@@ -13,7 +13,7 @@ static NSString *demoKey = @"demoKey";
 static NSString *foldName = @"FDCache";
 
 @interface ViewController ()
-
+@property(nonatomic, strong)FDCache *cache;
 @end
 
 @implementation ViewController
@@ -30,35 +30,35 @@ static NSString *foldName = @"FDCache";
 
 - (IBAction)store:(id)sender {
     NSArray *arrayToStore = @[@"1",@"demoString"];
-    FDCache *cache = [[FDCache alloc] initWithFolderName:foldName];
+    FDCache *cache = [FDCache sharedCache];
     [cache storeAsyncToDiskWithArray:arrayToStore forKey:demoKey withCompletion:^{
         NSLog(@"store complete");
     }];
 }
 
 - (IBAction)remove:(id)sender {
-    FDCache *cache = [[FDCache alloc] initWithFolderName:foldName];
+    FDCache *cache = [FDCache sharedCache];
     [cache removeForKey:demoKey withCompletion:^{
         NSLog(@"remove complete");
     }];
 }
 
 - (IBAction)isExist:(id)sender {
-    FDCache *cache = [[FDCache alloc] initWithFolderName:foldName];
+    FDCache *cache = [FDCache sharedCache];
     [cache isExistForKey:demoKey withCompletion:^(BOOL isExist) {
         NSLog(@"key %@ isExist:%d",demoKey,isExist);
     }];
 }
 
 - (IBAction)query:(id)sender {
-    FDCache *cache = [[FDCache alloc] initWithFolderName:foldName];
+    FDCache *cache = [FDCache sharedCache];
     [cache queryAsyncforKey:demoKey withCompletion:^(NSArray *dataArray) {
         NSLog(@"result dataArray:%@",dataArray);
     }];
 }
 
 -(IBAction)clearAll:(id)sender {
-    FDCache *cache = [[FDCache alloc] initWithFolderName:foldName];
+    FDCache *cache = [FDCache sharedCache];
     [cache clearDiskOnCompletion:^{
         NSLog(@"clear complete");
     }];

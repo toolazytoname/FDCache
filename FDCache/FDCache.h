@@ -18,6 +18,8 @@ typedef void(^cacheNoParamsBlock)();
  */
 @interface FDCache : NSObject
 
++ (FDCache *)sharedCache;
+
 /**
  *  init a FileDiskCache instance
  *

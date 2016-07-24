@@ -11,8 +11,9 @@
 #import <CommonCrypto/CommonDigest.h>
 /*** MD5 ***/
 #define CC_MD5_DIGEST_LENGTH    16          /* digest length in bytes */
-static char *ioQueuelabel = "com.sohu.mobile.FileDiskCache";
 
+static char *ioQueuelabel = "com.FDCache";
+static NSString *defaultFolderName = @"FDCache";
 
 @interface FDCache()
 
@@ -24,6 +25,22 @@ static char *ioQueuelabel = "com.sohu.mobile.FileDiskCache";
 @end
 
 @implementation FDCache
+
++ (FDCache *)sharedCache {
+    static dispatch_once_t once;
+    static id instance;
+    dispatch_once(&once, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+- (FDCache *)init {
+    self = [self initWithFolderName:defaultFolderName];
+    return self;
+}
+
+
 - (FDCache *)initWithFolderName:(NSString *)folderName {
     self = [super init];
     if (self) {
@@ -45,12 +62,9 @@ static char *ioQueuelabel = "com.sohu.mobile.FileDiskCache";
         return;
     }
     __weak typeof(self) weakSelf = self;
-    NSLog(@"weakSelf:%@",weakSelf);
     dispatch_async(weakSelf.ioQueue, ^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        NSLog(@"strongSelf store begin:%@",strongSelf);
         [strongSelf storeSyncToDiskWithArray:arrayToStore forKey:key];
-        NSLog(@"strongSelf store end:%@",strongSelf);
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion();
@@ -228,4 +242,10 @@ static char *ioQueuelabel = "com.sohu.mobile.FileDiskCache";
     return _fileManager;
 }
 
+- (NSString *)folderName {
+    if ((!_folderName)) {
+        _folderName = [[NSString alloc] initWithString:defaultFolderName];
+    }
+    return _folderName;
+}
 @end
