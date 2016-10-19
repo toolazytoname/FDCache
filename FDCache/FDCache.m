@@ -134,6 +134,9 @@ static NSString *defaultFolderName = @"FDCache";
 
 #pragma mark - query
 - (void)queryAsyncforKey:(NSString *)key withCompletion:(cacheQueryCompletedBlock)completion {
+    if (!completion) {
+        NSLog(@"[FileDiskCache] input completion is invalid");
+    }
     if (!key || !(key.length > 0)) {
         completion(nil);
     }
