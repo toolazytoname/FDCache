@@ -1,0 +1,6 @@
+framework module FDCache {
+  umbrella header "FDCache-umbrella.h"
+
+  export *
+  module * { export * }
+}

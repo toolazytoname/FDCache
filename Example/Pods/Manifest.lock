@@ -1,0 +1,16 @@
+PODS:
+  - FDCache (0.1.0)
+
+DEPENDENCIES:
+  - FDCache (from `../`)
+
+EXTERNAL SOURCES:
+  FDCache:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FDCache: 1ac32336dca94696fc9cf7cb64334a64ebb6e175
+
+PODFILE CHECKSUM: 35de67667f4bc210f98ad142c34dd3c379d40150
+
+COCOAPODS: 1.5.3

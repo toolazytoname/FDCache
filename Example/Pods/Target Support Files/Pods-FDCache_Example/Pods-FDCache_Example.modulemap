@@ -1,0 +1,6 @@
+framework module Pods_FDCache_Example {
+  umbrella header "Pods-FDCache_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FDCache_Example' do
+  pod 'FDCache', :path => '../'
+
+  target 'FDCache_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
